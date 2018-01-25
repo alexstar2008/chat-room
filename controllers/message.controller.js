@@ -14,7 +14,7 @@ function getMessagesByPage(req, res, next) {
 }
 
 function getSingleMessage(req, res, next) {
-    const id = req.params && req.params.id;
+    const id = req.params.id;
     Message.findById(id, function (err, message) {
         if (err) {
             return next(err);
@@ -37,7 +37,7 @@ function addMessage(req, res, next) {
         if (err) {
             return next(err);
         }
-        res.send('OK');
+        res.send('Message was saved');
     });
 }
 

@@ -5,6 +5,7 @@ const MessageSchema = new mongoose.Schema({
     author: String,
     email: {
         type:String,
+        required:true,
         match: [/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/,'Email is not valid']
     },
     text: {

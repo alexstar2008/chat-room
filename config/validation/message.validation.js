@@ -4,7 +4,7 @@ const Joi = require('joi');
 module.exports = {
     getMessagesByPage: {
         params: {
-            page: Joi.number().min(0).default(0)
+            page: Joi.number().required().min(0)
         }
     },
     getSingleMessage: {
@@ -15,7 +15,7 @@ module.exports = {
     addMessage: {
         body: {
             author:Joi.string().default('Anonymous'),
-            email: Joi.string().email(),
+            email: Joi.string().required().email(),
             text: Joi.string().required().max(100)
         }
     }
