@@ -1,3 +1,9 @@
 language: node_js
 node_js:
   - "7"
+deploy:
+  provider: heroku
+  api_key:
+    secure: "e0240da8-4298-4c5e-aae3-43ec635cbad9"
+  app: 
+    master: db2-chat-app
